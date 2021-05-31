@@ -9,6 +9,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -31,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         viewPager2 = findViewById(R.id.fragment_container);
 
         setUpAdapter(viewPager2);
+        if (getIntent().getExtras() == null) {
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+        }
+
     }
 
     private void setUpAdapter(ViewPager2 viewPager2){
