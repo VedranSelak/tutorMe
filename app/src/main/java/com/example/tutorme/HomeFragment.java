@@ -1,5 +1,6 @@
 package com.example.tutorme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.tutorme.roomdatabase.AppDatabase;
+import com.example.tutorme.roomdatabase.PostEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +30,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void setUpListAdapter(){
-        List<Post> posts = new ArrayList<Post>();
-        posts.add(new Post("Eldar Jahic", "eldarjahic@gmail.com", "Math"));
-        posts.add(new Post("Vedran Selak", "selakvedran@gmail.com", "Sport"));
+        List<PostEntity> posts = AppDatabase.getAppDatabase(getContext()).postDao().getAll();
+
 
         ListViewAdapter adapter = new ListViewAdapter(getContext(), posts);
         this.listView.setAdapter(adapter);

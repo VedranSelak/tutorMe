@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         UserEntity userEntity = appDatabase.userDao().loginUser(this.userEmail.getText().toString());
         if(userEntity.getUserPassword().equals(this.userPassword.getText().toString())){
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("status", "run");
+            intent.putExtra("user", this.userEmail.getText().toString());
             startActivity(intent);
         } else {
             Toast.makeText(this, "Invalid input!", Toast.LENGTH_SHORT).show();

@@ -9,10 +9,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 
-@Database(entities = {UserEntity.class}, version = 1)
+@Database(entities = {UserEntity.class, PostEntity.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String dbName = "tutorMe_db";
     public abstract UserDao userDao();
+    public abstract PostDao postDao();
     private static AppDatabase appDatabase;
 
     public static synchronized AppDatabase getAppDatabase(Context context){

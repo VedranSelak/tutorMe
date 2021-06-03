@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
             AppDatabase appDatabase = AppDatabase.getAppDatabase(this);
             appDatabase.userDao().registerUser(userEntity);
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("status", "run");
+            intent.putExtra("user", this.userEmail.getText().toString());
             startActivity(intent);
         } else {
             Toast.makeText(this, "Invalid input!", Toast.LENGTH_LONG).show();

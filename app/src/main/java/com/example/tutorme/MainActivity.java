@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+    }
+
+    public void addNewPost(View view){
+        Intent intent = new Intent(getApplicationContext(), PostDetailsActivity.class);
+        intent.putExtra("user", getIntent().getExtras().getString("user"));
+        startActivity(intent);
     }
 
     private void setUpAdapter(ViewPager2 viewPager2){

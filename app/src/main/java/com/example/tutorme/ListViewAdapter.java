@@ -8,14 +8,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.tutorme.roomdatabase.PostEntity;
+
 import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
 
     private Context context;
-    private List<Post> posts;
+    private List<PostEntity> posts;
 
-    public ListViewAdapter(Context context, List<Post> posts) {
+    public ListViewAdapter(Context context, List<PostEntity> posts) {
         this.context = context;
         this.posts = posts;
     }
@@ -40,15 +42,17 @@ public class ListViewAdapter extends BaseAdapter {
         LayoutInflater inflater = LayoutInflater.from(this.context);
         convertView = inflater.inflate(R.layout.list_view_item, parent, false);
 
-        Post post = this.posts.get(position);
+        PostEntity post = this.posts.get(position);
 
         TextView fullName = convertView.findViewById(R.id.full_name_text);
         TextView email = convertView.findViewById(R.id.email_text);
         TextView field = convertView.findViewById(R.id.field_text);
+        TextView description = convertView.findViewById(R.id.description_text);
 
         fullName.setText(post.getFullNameOfTutor());
         email.setText(post.getEmailOfTutor());
         field.setText(post.getFieldName());
+        description.setText(post.getDescription());
         return convertView;
     }
 }
