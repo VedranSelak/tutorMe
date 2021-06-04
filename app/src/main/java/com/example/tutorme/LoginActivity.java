@@ -30,14 +30,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view){
-        AppDatabase appDatabase = AppDatabase.getAppDatabase(this);
-        UserEntity userEntity = appDatabase.userDao().loginUser(this.userEmail.getText().toString());
-        if(userEntity.getUserPassword().equals(this.userPassword.getText().toString())){
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("user", this.userEmail.getText().toString());
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Invalid input!", Toast.LENGTH_SHORT).show();
+        try {
+            UserEntity userEntity = AppDatabase.getAppDatabase(this).userDao().loginUser(this.userEmail.getText().toString());
+            if(userEntity.getUserPassword().equals(this.userPassword.getText().toString())){
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("user", this.userEmail.getText().toString());
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Invalid password!", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "This user doesn't exist!", Toast.LENGTH_SHORT).show();
         }
     }
 

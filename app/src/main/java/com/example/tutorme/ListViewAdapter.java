@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.tutorme.roomdatabase.PostEntity;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
@@ -48,11 +50,13 @@ public class ListViewAdapter extends BaseAdapter {
         TextView email = convertView.findViewById(R.id.email_text);
         TextView field = convertView.findViewById(R.id.field_text);
         TextView description = convertView.findViewById(R.id.description_text);
+        TextView cph = convertView.findViewById(R.id.cost_per_hour_text);
 
         fullName.setText(post.getFullNameOfTutor());
         email.setText(post.getEmailOfTutor());
         field.setText(post.getFieldName());
         description.setText(post.getDescription());
+        cph.setText(String.valueOf(post.getPerHourCost()));
         return convertView;
     }
 }
