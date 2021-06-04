@@ -31,14 +31,19 @@ public class RegisterActivity extends AppCompatActivity {
         userEntity.setUserFullName(this.userFullName.getText().toString());
         userEntity.setUserEmail(this.userEmail.getText().toString());
         userEntity.setUserPassword(this.userPassword.getText().toString());
-        if(validate(userEntity)){
-            AppDatabase appDatabase = AppDatabase.getAppDatabase(this);
-            appDatabase.userDao().registerUser(userEntity);
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("user", this.userEmail.getText().toString());
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Invalid input!", Toast.LENGTH_LONG).show();
+
+        try {
+            if(validate(userEntity)){
+                AppDatabase appDatabase = AppDatabase.getAppDatabase(this);
+                appDatabase.userDao().registerUser(userEntity);
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("user", this.userEmail.getText().toString());
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Invalid input!", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "User with that email already exists!", Toast.LENGTH_LONG).show();
         }
 
     }

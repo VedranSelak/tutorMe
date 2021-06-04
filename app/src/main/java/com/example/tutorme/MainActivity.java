@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private ViewPager2 viewPager2;
-    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
