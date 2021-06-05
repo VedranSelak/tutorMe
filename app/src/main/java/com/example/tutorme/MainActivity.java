@@ -2,25 +2,15 @@ package com.example.tutorme;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addNewPost(View view){
-        Intent intent = new Intent(getApplicationContext(), PostDetailsActivity.class);
+        Intent intent = new Intent(getApplicationContext(), PostActivity.class);
         intent.putExtra("user", getIntent().getExtras().getString("user"));
         startActivity(intent);
     }
