@@ -20,7 +20,7 @@ public class PostActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_details);
+        setContentView(R.layout.activity_post);
 
         this.description = findViewById(R.id.post_description_input);
         this.field = findViewById(R.id.post_field_input);
