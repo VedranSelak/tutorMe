@@ -31,6 +31,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getContext(), PostDetailsActivity.class);
+                PostEntity post = (PostEntity) parent.getItemAtPosition(position);
+                intent.putExtra("post", post.getId());
+                intent.putExtra("user", getArguments().getString("user"));
                 startActivity(intent);
             }
         });

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private ViewPager2 viewPager2;
+    Bundle extras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,28 +28,36 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
 
         viewPager2 = findViewById(R.id.fragment_container);
+        this.extras = getIntent().getExtras();
 
-
-        setUpAdapter(viewPager2);
-        if (getIntent().getExtras() == null) {
+        if (this.extras == null) {
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
         }
 
+        setUpAdapter(viewPager2);
     }
 
     public void addNewPost(View view){
         Intent intent = new Intent(getApplicationContext(), PostActivity.class);
-        intent.putExtra("user", getIntent().getExtras().getString("user"));
+        intent.putExtra("user", this.extras.getString("user"));
         startActivity(intent);
     }
 
     private void setUpAdapter(ViewPager2 viewPager2){
-        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(this);
-        viewPageAdapter.addFragment(new HomeFragment());
-        viewPageAdapter.addFragment(new AccountFragment());
-        viewPageAdapter.addFragment(new SettingsFragment());
-        viewPager2.setAdapter(viewPageAdapter);
+        try {
+            ViewPageAdapter viewPageAdapter = new ViewPageAdapter(this);
+            HomeFragment homeFragment = new HomeFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("user", getIntent().getExtras().getString("user"));
+            homeFragment.setArguments(bundle);
+            viewPageAdapter.addFragment(homeFragment);
+            viewPageAdapter.addFragment(new AccountFragment());
+            viewPageAdapter.addFragment(new SettingsFragment());
+            viewPager2.setAdapter(viewPageAdapter);
+        } catch (Exception e) {
+            Log.i("Error: ", e.getMessage());
+        }
     }
 
 

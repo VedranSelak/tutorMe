@@ -15,10 +15,10 @@ public interface PostDao {
     List<PostEntity> getAll();
 
     @Query("SELECT * FROM posts WHERE id = :id LIMIT 1")
-    PostEntity getTodoById(long id);
+    PostEntity getPostById(long id);
 
     @Query("UPDATE posts SET fieldName=:fieldName, description=:description WHERE id=:id")
-    void updateTodo(String fieldName, String description, long id);
+    void updatePost(String fieldName, String description, long id);
 
     @Delete
     void delete(PostEntity post);
