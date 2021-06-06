@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tutorme.roomdatabase.AppDatabase;
-import com.example.tutorme.roomdatabase.UserDao;
 import com.example.tutorme.roomdatabase.UserEntity;
 
 public class RegisterActivity extends AppCompatActivity {

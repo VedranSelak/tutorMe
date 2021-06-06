@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.tutorme.roomdatabase.AppDatabase;
-import com.example.tutorme.roomdatabase.PostEntity;
+import com.example.tutorme.roomdatabase.entities.PostEntity;
 import com.example.tutorme.roomdatabase.UserEntity;
 
 public class PostActivity extends AppCompatActivity {

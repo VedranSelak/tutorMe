@@ -1,16 +1,13 @@
 package com.example.tutorme;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.tutorme.roomdatabase.PostEntity;
-
-import org.w3c.dom.Text;
+import com.example.tutorme.roomdatabase.entities.PostEntity;
 
 import java.util.List;
 

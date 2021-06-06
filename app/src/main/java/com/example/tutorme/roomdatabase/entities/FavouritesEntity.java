@@ -1,10 +1,12 @@
-package com.example.tutorme.roomdatabase;
+package com.example.tutorme.roomdatabase.entities;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "favourites", foreignKeys = {@ForeignKey(entity=PostEntity.class, parentColumns="id", childColumns="postId"), @ForeignKey(entity = UserEntity.class, parentColumns = "id", childColumns = "userId")})
+import com.example.tutorme.roomdatabase.UserEntity;
+
+@Entity(tableName = "favourites", foreignKeys = {@ForeignKey(entity= PostEntity.class, parentColumns="id", childColumns="postId"), @ForeignKey(entity = UserEntity.class, parentColumns = "id", childColumns = "userId")})
 public class FavouritesEntity {
     @PrimaryKey(autoGenerate = true)
     private long id;

@@ -13,9 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.tutorme.roomdatabase.AppDatabase;
-import com.example.tutorme.roomdatabase.PostEntity;
+import com.example.tutorme.roomdatabase.entities.PostEntity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {

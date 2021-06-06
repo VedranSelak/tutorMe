@@ -1,8 +1,10 @@
-package com.example.tutorme.roomdatabase;
+package com.example.tutorme.roomdatabase.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.tutorme.roomdatabase.UserEntity;
 
 @Dao
 public interface UserDao {
