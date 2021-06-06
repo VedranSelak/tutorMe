@@ -1,4 +1,4 @@
-package com.example.tutorme;
+package com.example.tutorme.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.tutorme.adapters.ListViewAdapter;
+import com.example.tutorme.R;
 import com.example.tutorme.roomdatabase.AppDatabase;
 import com.example.tutorme.roomdatabase.entities.FavouritesEntity;
 import com.example.tutorme.roomdatabase.entities.PostEntity;

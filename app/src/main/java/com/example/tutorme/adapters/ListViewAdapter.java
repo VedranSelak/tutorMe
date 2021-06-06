@@ -1,4 +1,4 @@
-package com.example.tutorme;
+package com.example.tutorme.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.tutorme.R;
 import com.example.tutorme.roomdatabase.entities.PostEntity;
 
 import java.util.List;

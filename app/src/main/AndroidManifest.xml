@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorMe">
-        <activity android:name=".PostDetailsActivity"></activity>
+        <activity android:name=".activities.PostDetailsActivity"></activity>
         <activity
-            android:name=".PostActivity"
+            android:name=".activities.PostActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

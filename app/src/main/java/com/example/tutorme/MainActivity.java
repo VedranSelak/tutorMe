@@ -9,8 +9,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
+import com.example.tutorme.R;
+import com.example.tutorme.activities.PostActivity;
+import com.example.tutorme.activities.RegisterActivity;
+import com.example.tutorme.adapters.ViewPageAdapter;
+import com.example.tutorme.fragments.AccountFragment;
+import com.example.tutorme.fragments.HomeFragment;
+import com.example.tutorme.fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

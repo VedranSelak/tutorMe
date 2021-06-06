@@ -1,4 +1,4 @@
-package com.example.tutorme;
+package com.example.tutorme.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.tutorme.R;
+import com.example.tutorme.MainActivity;
 import com.example.tutorme.roomdatabase.AppDatabase;
 import com.example.tutorme.roomdatabase.entities.PostEntity;
-import com.example.tutorme.roomdatabase.UserEntity;
+import com.example.tutorme.roomdatabase.entities.UserEntity;
 
 public class PostActivity extends AppCompatActivity {
 

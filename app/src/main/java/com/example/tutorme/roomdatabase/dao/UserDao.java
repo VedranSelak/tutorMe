@@ -4,7 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.example.tutorme.roomdatabase.UserEntity;
+import com.example.tutorme.roomdatabase.entities.UserEntity;
 
 @Dao
 public interface UserDao {

@@ -1,4 +1,4 @@
-package com.example.tutorme;
+package com.example.tutorme.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

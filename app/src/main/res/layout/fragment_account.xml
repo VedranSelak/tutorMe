@@ -23,7 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             />
 
-        <com.example.tutorme.MyListView
+        <com.example.tutorme.utilities.MyListView
             android:id="@+id/your_posts_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.example.tutorme.MyListView
+        <com.example.tutorme.utilities.MyListView
             android:id="@+id/favourites_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

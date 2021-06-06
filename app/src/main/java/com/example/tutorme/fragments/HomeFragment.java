@@ -1,4 +1,4 @@
-package com.example.tutorme;
+package com.example.tutorme.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.tutorme.adapters.ListViewAdapter;
+import com.example.tutorme.activities.PostDetailsActivity;
+import com.example.tutorme.R;
 import com.example.tutorme.roomdatabase.AppDatabase;
 import com.example.tutorme.roomdatabase.entities.PostEntity;
 

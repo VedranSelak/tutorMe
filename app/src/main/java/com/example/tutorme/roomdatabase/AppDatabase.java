@@ -11,6 +11,7 @@ import com.example.tutorme.roomdatabase.dao.PostDao;
 import com.example.tutorme.roomdatabase.dao.UserDao;
 import com.example.tutorme.roomdatabase.entities.FavouritesEntity;
 import com.example.tutorme.roomdatabase.entities.PostEntity;
+import com.example.tutorme.roomdatabase.entities.UserEntity;
 
 
 @Database(entities = {UserEntity.class, PostEntity.class, FavouritesEntity.class}, version = 1)

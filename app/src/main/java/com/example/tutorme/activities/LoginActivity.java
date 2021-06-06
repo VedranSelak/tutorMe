@@ -1,4 +1,4 @@
-package com.example.tutorme;
+package com.example.tutorme.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tutorme.MainActivity;
+import com.example.tutorme.R;
 import com.example.tutorme.roomdatabase.AppDatabase;
-import com.example.tutorme.roomdatabase.UserEntity;
+import com.example.tutorme.roomdatabase.entities.UserEntity;
 
 public class LoginActivity extends AppCompatActivity {
 

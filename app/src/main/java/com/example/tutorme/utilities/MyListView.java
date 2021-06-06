@@ -1,4 +1,4 @@
-package com.example.tutorme;
+package com.example.tutorme.utilities;
 
 import android.content.Context;
 import android.util.AttributeSet;

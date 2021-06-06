@@ -1,4 +1,4 @@
-package com.example.tutorme.roomdatabase;
+package com.example.tutorme.roomdatabase.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
