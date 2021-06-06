@@ -1,5 +1,6 @@
 package com.example.tutorme.fragments;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,7 +35,9 @@ public class AccountFragment extends Fragment {
         this.yourList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Dialog myDialog = new Dialog(getContext());
+                myDialog.setContentView(R.layout.custompopup);
+                myDialog.show();
             }
         });
 
