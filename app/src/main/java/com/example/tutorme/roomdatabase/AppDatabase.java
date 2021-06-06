@@ -14,6 +14,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static final String dbName = "tutorMe_db";
     public abstract UserDao userDao();
     public abstract PostDao postDao();
+    public abstract FavouritesDao favouritesDao();
     private static AppDatabase appDatabase;
 
     public static synchronized AppDatabase getAppDatabase(Context context){

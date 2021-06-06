@@ -14,6 +14,9 @@ public interface PostDao {
     @Query("SELECT * FROM posts")
     List<PostEntity> getAll();
 
+    @Query("SELECT * FROM posts WHERE emailOfTutor=:email")
+    List<PostEntity> getAllByUserEmail(String email);
+
     @Query("SELECT * FROM posts WHERE id = :id LIMIT 1")
     PostEntity getPostById(long id);
 

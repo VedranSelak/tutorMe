@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
             bundle.putString("user", getIntent().getExtras().getString("user"));
             homeFragment.setArguments(bundle);
             viewPageAdapter.addFragment(homeFragment);
-            viewPageAdapter.addFragment(new AccountFragment());
+            AccountFragment accountFragment = new AccountFragment();
+            accountFragment.setArguments(bundle);
+            viewPageAdapter.addFragment(accountFragment);
             viewPageAdapter.addFragment(new SettingsFragment());
             viewPager2.setAdapter(viewPageAdapter);
         } catch (Exception e) {
