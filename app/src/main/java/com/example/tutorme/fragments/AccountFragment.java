@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,6 +38,18 @@ public class AccountFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Dialog myDialog = new Dialog(getContext());
                 myDialog.setContentView(R.layout.custompopup);
+
+                PostEntity post = (PostEntity) parent.getItemAtPosition(position);
+
+                TextView name = myDialog.findViewById(R.id.pop_full_name_text);
+                TextView field = myDialog.findViewById(R.id.pop_field_text);
+                TextView cost = myDialog.findViewById(R.id.pop_cost_per_hour_text);
+
+                name.setText(post.getFullNameOfTutor());
+                field.setText(post.getFieldName());
+                String cph = String.valueOf(post.getPerHourCost()) + " $";
+                cost.setText(cph);
+
                 myDialog.show();
             }
         });
@@ -44,7 +57,21 @@ public class AccountFragment extends Fragment {
         this.favouritesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Dialog myDialog = new Dialog(getContext());
+                myDialog.setContentView(R.layout.custompopup);
 
+                PostEntity post = (PostEntity) parent.getItemAtPosition(position);
+
+                TextView name = myDialog.findViewById(R.id.pop_full_name_text);
+                TextView field = myDialog.findViewById(R.id.pop_field_text);
+                TextView cost = myDialog.findViewById(R.id.pop_cost_per_hour_text);
+
+                name.setText(post.getFullNameOfTutor());
+                field.setText(post.getFieldName());
+                String cph = String.valueOf(post.getPerHourCost()) + " $";
+                cost.setText(cph);
+
+                myDialog.show();
             }
         });
 

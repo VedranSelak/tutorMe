@@ -45,16 +45,13 @@ public class ListViewAdapter extends BaseAdapter {
         PostEntity post = this.posts.get(position);
 
         TextView fullName = convertView.findViewById(R.id.full_name_text);
-        TextView email = convertView.findViewById(R.id.email_text);
         TextView field = convertView.findViewById(R.id.field_text);
-        TextView description = convertView.findViewById(R.id.description_text);
         TextView cph = convertView.findViewById(R.id.cost_per_hour_text);
 
         fullName.setText(post.getFullNameOfTutor());
-        email.setText(post.getEmailOfTutor());
         field.setText(post.getFieldName());
-        description.setText(post.getDescription());
-        cph.setText(String.valueOf(post.getPerHourCost()));
+        String cost = String.valueOf(post.getPerHourCost()) + " $";
+        cph.setText(cost);
         return convertView;
     }
 }
