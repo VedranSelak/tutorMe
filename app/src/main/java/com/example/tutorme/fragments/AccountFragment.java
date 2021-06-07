@@ -93,18 +93,41 @@ public class AccountFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Dialog myDialog = new Dialog(getContext());
-                myDialog.setContentView(R.layout.custompopup);
+                myDialog.setContentView(R.layout.favouritespopup);
 
                 PostEntity post = (PostEntity) parent.getItemAtPosition(position);
 
-                TextView name = myDialog.findViewById(R.id.pop_full_name_text);
-                TextView field = myDialog.findViewById(R.id.pop_field_text);
-                TextView cost = myDialog.findViewById(R.id.pop_cost_per_hour_text);
+                TextView name = myDialog.findViewById(R.id.pop_fav_name);
+                TextView field = myDialog.findViewById(R.id.pop_fav_field);
+                TextView cost = myDialog.findViewById(R.id.pop_fav_cost_per_hour);
 
                 name.setText(post.getFullNameOfTutor());
                 field.setText(post.getFieldName());
                 String cph = String.valueOf(post.getPerHourCost()) + " $";
                 cost.setText(cph);
+
+                ImageView remove = myDialog.findViewById(R.id.pop_remove);
+                ImageView rate = myDialog.findViewById(R.id.pop_rate);
+                Context context = getContext();
+
+                remove.setOnClickListener(new MyOnClickListener(post, context) {
+                    @Override
+                    public void onClick(View v) {
+                        AppDatabase.getAppDatabase(context).favouritesDao().removeFromFavouritesByPostId(post.getId());
+
+                        Intent intent = getActivity().getIntent();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        getActivity().finish();
+                        startActivity(intent);
+                    }
+                });
+
+                rate.setOnClickListener(new MyOnClickListener(post, context){
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
 
                 myDialog.show();
             }

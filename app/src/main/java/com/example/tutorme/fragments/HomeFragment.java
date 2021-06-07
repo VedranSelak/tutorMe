@@ -67,7 +67,6 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        setUpListAdapter(AppDatabase.getAppDatabase(getContext()).postDao().getAll());
 
         return view;
     }
