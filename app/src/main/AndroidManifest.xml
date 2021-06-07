@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorMe">
-        <activity android:name=".activities.PostDetailsActivity"></activity>
+        <activity android:name=".activities.ReviewActivity"></activity>
+        <activity android:name=".activities.PostDetailsActivity" />
         <activity
             android:name=".activities.PostActivity"
             android:parentActivityName=".MainActivity" />

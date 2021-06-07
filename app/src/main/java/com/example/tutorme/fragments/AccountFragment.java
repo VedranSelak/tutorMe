@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tutorme.MainActivity;
 import com.example.tutorme.activities.PostActivity;
+import com.example.tutorme.activities.ReviewActivity;
 import com.example.tutorme.adapters.ListViewAdapter;
 import com.example.tutorme.R;
 import com.example.tutorme.roomdatabase.AppDatabase;
@@ -125,7 +126,8 @@ public class AccountFragment extends Fragment {
                 rate.setOnClickListener(new MyOnClickListener(post, context){
                     @Override
                     public void onClick(View v) {
-
+                        Intent intent = new Intent(context, ReviewActivity.class);
+                        startActivity(intent);
                     }
                 });
 
