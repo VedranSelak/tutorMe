@@ -1,23 +1,29 @@
 package com.example.tutorme.fragments;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.example.tutorme.MainActivity;
 import com.example.tutorme.adapters.ListViewAdapter;
 import com.example.tutorme.R;
 import com.example.tutorme.roomdatabase.AppDatabase;
 import com.example.tutorme.roomdatabase.entities.FavouritesEntity;
 import com.example.tutorme.roomdatabase.entities.PostEntity;
+import com.example.tutorme.utilities.MyOnClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +50,22 @@ public class AccountFragment extends Fragment {
                 TextView name = myDialog.findViewById(R.id.pop_full_name_text);
                 TextView field = myDialog.findViewById(R.id.pop_field_text);
                 TextView cost = myDialog.findViewById(R.id.pop_cost_per_hour_text);
+
+                ImageView delete = myDialog.findViewById(R.id.pop_delete);
+                Context context = getContext();
+
+                delete.setOnClickListener(new MyOnClickListener(post, context) {
+                    @Override
+                    public void onClick(View v) {
+                        AppDatabase.getAppDatabase(context).favouritesDao().removeFromFavouritesByPostId(post.getId());
+                        AppDatabase.getAppDatabase(context).postDao().delete(post);
+                        
+                        Intent intent = getActivity().getIntent();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        getActivity().finish();
+                        startActivity(intent);
+                    }
+                });
 
                 name.setText(post.getFullNameOfTutor());
                 field.setText(post.getFieldName());

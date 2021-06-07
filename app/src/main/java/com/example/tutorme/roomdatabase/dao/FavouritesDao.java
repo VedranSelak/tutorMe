@@ -18,4 +18,7 @@ public interface FavouritesDao {
 
     @Query("DELETE FROM favourites WHERE postId=:postId AND userId=:userId")
     void removeFromFavourites(long postId, long userId);
+
+    @Query("DELETE FROM favourites WHERE postId=:postId")
+    void removeFromFavouritesByPostId(long postId);
 }

@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/pop_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
@@ -58,14 +58,14 @@
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/pop_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/pop_edit"
         app:layout_constraintTop_toBottomOf="@+id/pop_cost_per_hour_text"
         app:srcCompat="@drawable/ic_baseline_delete_24"
         tools:ignore="VectorDrawableCompat" />
