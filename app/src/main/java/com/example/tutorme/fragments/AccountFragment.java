@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tutorme.MainActivity;
+import com.example.tutorme.activities.PostActivity;
 import com.example.tutorme.adapters.ListViewAdapter;
 import com.example.tutorme.R;
 import com.example.tutorme.roomdatabase.AppDatabase;
@@ -52,6 +53,7 @@ public class AccountFragment extends Fragment {
                 TextView cost = myDialog.findViewById(R.id.pop_cost_per_hour_text);
 
                 ImageView delete = myDialog.findViewById(R.id.pop_delete);
+                ImageView edit = myDialog.findViewById(R.id.pop_edit);
                 Context context = getContext();
 
                 delete.setOnClickListener(new MyOnClickListener(post, context) {
@@ -63,6 +65,17 @@ public class AccountFragment extends Fragment {
                         Intent intent = getActivity().getIntent();
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         getActivity().finish();
+                        startActivity(intent);
+                    }
+                });
+
+                edit.setOnClickListener(new MyOnClickListener(post, context){
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, PostActivity.class);
+                        intent.putExtra("status", "edit");
+                        intent.putExtra("user", post.getEmailOfTutor());
+                        intent.putExtra("postId", post.getId());
                         startActivity(intent);
                     }
                 });
