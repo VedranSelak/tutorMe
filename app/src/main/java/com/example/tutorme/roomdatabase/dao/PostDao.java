@@ -25,6 +25,9 @@ public interface PostDao {
     @Query("UPDATE posts SET fieldName=:fieldName, description=:description, perHourCost=:cost WHERE id=:id")
     void updatePost(String fieldName, String description, double cost, long id);
 
+    @Query("SELECT * FROM posts WHERE fieldName = :fieldName ")
+    List<PostEntity> getPostByField(String fieldName);
+
     @Delete
     void delete(PostEntity post);
 }

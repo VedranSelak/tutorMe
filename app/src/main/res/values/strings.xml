@@ -3,4 +3,13 @@
     <string name="home">Home</string>
     <string name="account">Account</string>
     <string name="settings">Settings</string>
+    <string-array name="names">
+        <item>All</item>
+        <item>Math</item>
+        <item>Programming</item>
+        <item>Physics</item>
+        <item>Sport</item>
+        <item>English</item>
+        <item>German</item>
+    </string-array>
 </resources>
