@@ -127,6 +127,7 @@ public class AccountFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(context, ReviewActivity.class);
+                        intent.putExtra("user", post.getEmailOfTutor());
                         startActivity(intent);
                     }
                 });
