@@ -11,9 +11,9 @@
         android:title="@string/account"
         />
     <item
-        android:id="@+id/nav_settings"
-        android:icon="@drawable/ic_baseline_settings_24"
-        android:title="@string/settings"
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_baseline_sensor_door_24"
+        android:title="@string/logout"
         />
 
 </menu>

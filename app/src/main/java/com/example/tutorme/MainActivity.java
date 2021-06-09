@@ -10,13 +10,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.tutorme.R;
+import com.example.tutorme.activities.LoginActivity;
 import com.example.tutorme.activities.PostActivity;
 import com.example.tutorme.activities.RegisterActivity;
 import com.example.tutorme.adapters.ViewPageAdapter;
 import com.example.tutorme.fragments.AccountFragment;
 import com.example.tutorme.fragments.HomeFragment;
-import com.example.tutorme.fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -61,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
             AccountFragment accountFragment = new AccountFragment();
             accountFragment.setArguments(bundle);
             viewPageAdapter.addFragment(accountFragment);
-            viewPageAdapter.addFragment(new SettingsFragment());
             viewPager2.setAdapter(viewPageAdapter);
         } catch (Exception e) {
             Log.i("Error: ", e.getMessage());
@@ -80,8 +78,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_account:
                     viewPager2.setCurrentItem(1);
                     return true;
-                case R.id.nav_settings:
-                    viewPager2.setCurrentItem(2);
+                case R.id.nav_logout:
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
                     return true;
                 default:
                     return false;
